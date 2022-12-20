@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export PYBUILD_NAME=tinycss
+# Disable tests because not all dependencies have been packaged yet:
+# * pytest-flake8
+# * pytest isort
+export PYBUILD_DISABLE=test
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+%:
+	dh $@ --with python3,sphinxdoc --buildsystem=pybuild
+
+override_dh_auto_build:
+	dh_auto_build
+	PYTHONPATH=. python3 -m sphinx -b html -d docs/.build/.doctrees -N docs docs/.build/html
+
+override_dh_clean:
+	rm -rf docs/.build
+	dh_clean

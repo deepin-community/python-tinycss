@@ -1,0 +1,8 @@
+Document: python-tinycss-doc
+Title: tinycss Documentation
+Author: Simon Sapin <simon.sapin@exyr.org>
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-tinycss-doc/html/index.html
+Files: /usr/share/doc/python-tinycss-doc/html/*.html
