@@ -1,10 +1,10 @@
 Source: python-tinycss
 Section: python
 Priority: optional
-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders: Michael Fladischer <fladi@debian.org>,
            Felix Krull <f_krull@gmx.de>
-Build-Depends: debhelper-compat (= 9),
+Build-Depends: debhelper-compat (= 13),
                dh-python,
                cython3,
                python3-all-dev,
@@ -12,8 +12,8 @@ Build-Depends: debhelper-compat (= 9),
                python3-sphinx
 Standards-Version: 3.9.8
 Homepage: https://github.com/Kozea/tinycss
-Vcs-Browser: https://salsa.debian.org/python-team/modules/python-tinycss
-Vcs-Git: https://salsa.debian.org/python-team/modules/python-tinycss.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-tinycss
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-tinycss.git
 
 
 
@@ -41,6 +41,7 @@ Section: doc
 Architecture: all
 Depends: ${misc:Depends},
          ${sphinxdoc:Depends}
+Multi-Arch: foreign
 Description: complete yet simple CSS parser (Documentation)
  tinycss is a complete yet simple CSS parser for Python. It supports the full
  syntax and error handling for CSS 2.1 as well as some CSS 3 modules:
