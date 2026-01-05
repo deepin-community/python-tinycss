@@ -1,0 +1,20 @@
+From: Colin Watson <cjwatson@debian.org>
+Date: Tue, 17 Dec 2024 14:00:23 +0000
+Subject: Fix documentation build for Sphinx 8.0
+
+Bug-Debian: https://bugs.debian.org/1090163
+Last-Update: 2024-12-17
+---
+ docs/conf.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/docs/conf.py b/docs/conf.py
+index fa7da0a..609e398 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -249,4 +249,4 @@ texinfo_documents = [
+ 
+ 
+ # Example configuration for intersphinx: refer to the Python standard library.
+-intersphinx_mapping = {'http://docs.python.org/': None}
++intersphinx_mapping = {'python': ('http://docs.python.org/', None)}

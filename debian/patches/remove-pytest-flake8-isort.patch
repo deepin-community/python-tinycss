@@ -1,0 +1,30 @@
+From: Colin Watson <cjwatson@debian.org>
+Date: Tue, 17 Dec 2024 14:09:59 +0000
+Subject: Remove pytest flake8 and isort configuration
+
+`pytest-isort` isn't currently packaged in Debian, and running
+`pytest-flake8` as a downstream distributor is inconvenient.
+
+Last-Update: 2024-12-17
+---
+ setup.cfg | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/setup.cfg b/setup.cfg
+index 2c35592..5c4105e 100644
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -9,12 +9,8 @@ upload-dir = docs/_build/html
+ test = pytest
+ 
+ [tool:pytest]
+-addopts = --flake8 --isort --cov --ignore=test/cairosvg_reference
++addopts = --cov --ignore=test/cairosvg_reference
+ norecursedirs = dist .cache .git build *.egg-info .eggs venv cairosvg_reference
+-flake8-ignore = docs/conf.py ALL
+-isort_ignore = 
+-	docs/conf.py
+-	setup.py
+ 
+ [egg_info]
+ tag_build = 
